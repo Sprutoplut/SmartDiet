@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/change_weight"
+        android:icon="@drawable/change_weight"
+        android:title="Вес"/>
+
+    <item
+        android:id="@+id/calc_food"
+        android:icon="@drawable/calc_food"
+        android:title="Рацион"/>
+    <item
+        android:id="@+id/delivery_food"
+        android:icon="@drawable/delivery_food"
+        android:title="Магазины"/>
+    <item
+        android:id="@+id/person_app"
+        android:icon="@drawable/person"
+        android:title="Данные"/>
+    <item
+        android:id="@+id/about_app"
+        android:icon="@drawable/about_app"
+        android:title="О приложении"/>
+</menu>
