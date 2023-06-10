@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9DBFCF"
+    android:background="@drawable/backgroundfon"
     tools:context=".Register">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -14,7 +14,8 @@
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/RoundedTextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tllog"
@@ -32,7 +33,8 @@
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til1">
+        app:layout_constraintTop_toBottomOf="@+id/til1"
+        style="@style/RoundedTextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tlpas1"
@@ -50,7 +52,8 @@
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til2">
+        app:layout_constraintTop_toBottomOf="@+id/til2"
+        style="@style/RoundedTextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tlpas2"
@@ -68,7 +71,8 @@
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til3">
+        app:layout_constraintTop_toBottomOf="@+id/til3"
+        style="@style/RoundedTextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tlweight"
@@ -86,7 +90,8 @@
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til4">
+        app:layout_constraintTop_toBottomOf="@+id/til4"
+        style="@style/RoundedTextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tldateborn"
@@ -99,10 +104,10 @@
 
     <Button
         android:id="@+id/reg_but"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_width="285dp"
+        android:layout_height="49dp"
         android:layout_marginTop="50dp"
-        android:backgroundTint="#DFDFDF"
+        android:backgroundTint="#F8F6F6"
         android:text="Зарегестрироваться"
         android:textColor="#000000"
         android:textStyle="bold"

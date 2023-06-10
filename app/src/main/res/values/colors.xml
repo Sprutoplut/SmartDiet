@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="d">#1D83B3</color>
     <color name="v">#B2EDEDED</color>
+    <color name="fon_color">#DDDADA</color>
 </resources>
