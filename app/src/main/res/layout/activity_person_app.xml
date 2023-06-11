@@ -304,7 +304,7 @@
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:hint="Возраст"
-                            android:inputType="numberPassword"
+                            android:inputType="numberDecimal"
                             android:textSize="14sp" />
                     </com.google.android.material.textfield.TextInputLayout>
 

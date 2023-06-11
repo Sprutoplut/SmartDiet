@@ -30,6 +30,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.List;
+
 public class Person_App extends AppCompatActivity implements TextWatcher{
     public TextInputEditText weight,height;
     public ChipGroup obraz,mind,pol;
@@ -79,6 +81,33 @@ public class Person_App extends AppCompatActivity implements TextWatcher{
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+        pol.setOnCheckedStateChangeListener(new ChipGroup.OnCheckedStateChangeListener() {
+            @Override
+            public void onCheckedChanged(@NonNull ChipGroup group, @NonNull List<Integer> checkedIds) {
+                if(!TextUtils.isEmpty(weight.getText().toString()) && !TextUtils.isEmpty(height.getText().toString()) && !TextUtils.isEmpty(age.getText().toString()))
+                {
+                    Calculate();
+                }
+            }
+        });
+        obraz.setOnCheckedStateChangeListener(new ChipGroup.OnCheckedStateChangeListener() {
+            @Override
+            public void onCheckedChanged(@NonNull ChipGroup group, @NonNull List<Integer> checkedIds) {
+                if(!TextUtils.isEmpty(weight.getText().toString()) && !TextUtils.isEmpty(height.getText().toString()) && !TextUtils.isEmpty(age.getText().toString()))
+                {
+                    Calculate();
+                }
+            }
+        });
+        mind.setOnCheckedStateChangeListener(new ChipGroup.OnCheckedStateChangeListener() {
+            @Override
+            public void onCheckedChanged(@NonNull ChipGroup group, @NonNull List<Integer> checkedIds) {
+                if(!TextUtils.isEmpty(weight.getText().toString()) && !TextUtils.isEmpty(height.getText().toString()) && !TextUtils.isEmpty(age.getText().toString()))
+                {
+                    Calculate();
+                }
             }
         });
         Button button=findViewById(R.id.button2);
