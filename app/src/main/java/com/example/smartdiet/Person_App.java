@@ -10,8 +10,11 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.smartdiet.Models.Plan;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -102,6 +105,10 @@ public class Person_App extends AppCompatActivity implements TextWatcher{
 
                     }
                 });
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Вчера – мечта, сегодня – цель, завтра — реальность", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
             }
         });
         BottomNavigationView bottomNavigationView = findViewById(R.id.btm_nav_view);
