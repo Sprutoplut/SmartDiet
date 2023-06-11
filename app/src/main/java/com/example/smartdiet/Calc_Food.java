@@ -161,13 +161,13 @@ public class Calc_Food extends AppCompatActivity {
                 newLayout.addView(textInputLayout);
 
                 parentLayout.addView(newLayout);
-                
-                scrollView2.post(new Runnable() {
+
+                /*scrollView2.post(new Runnable() {
                     @Override
                     public void run() {
                         scrollView2.fullScroll(ScrollView.FOCUS_DOWN);
                     }
-                });
+                });*/
             }
         });
 
