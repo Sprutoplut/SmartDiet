@@ -1,5 +1,7 @@
 package com.example.smartdiet;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -11,11 +13,19 @@ import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.TextView;
 import com.example.smartdiet.Models.Plan;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class Person_App extends AppCompatActivity implements TextWatcher{
     public TextInputEditText weight,height;
@@ -47,12 +57,51 @@ public class Person_App extends AppCompatActivity implements TextWatcher{
         weight.addTextChangedListener(this);
         height.addTextChangedListener(this);
         age.addTextChangedListener(this);
+        Query query =  plandb.orderByChild("log").equalTo(arguments.get("log").toString());
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot singleSnapshot : snapshot.getChildren()){
+                    Plan plan1 = singleSnapshot.getValue(Plan.class);
+                    imt.setText(String.format("%.1f",plan1.IMT));
+                    voo.setText(String.format("%.1f",plan1.BOO));
+                    status.setText(plan1.Target);
+                    kal.setText(String.format("%.1f",plan1.Kal));
+                    jir.setText(String.format("%.1f",plan1.Jir));
+                    bel.setText(String.format("%.1f",plan1.Bel));
+                    ugl.setText(String.format("%.1f",plan1.Ugl));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         Button button=findViewById(R.id.button2);
         button.setOnClickListener(v -> {
             if(!TextUtils.isEmpty(statusdb) && !TextUtils.isEmpty(kaldb.toString()) && !TextUtils.isEmpty(voodb.toString())&& !TextUtils.isEmpty(imtdb.toString())&& !TextUtils.isEmpty(beldb.toString())&& !TextUtils.isEmpty(jirdb.toString())&& !TextUtils.isEmpty(ugldb.toString()))
             {
                 Plan plan = new Plan(arguments.get("log").toString(), kaldb, beldb, jirdb,ugldb,imtdb,voodb,statusdb);
-                plandb.push().setValue(plan);
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.getValue()!=null) {
+                            for (DataSnapshot data : snapshot.getChildren()) {
+                                data.getRef().removeValue();
+                                plandb.push().setValue(plan);
+                            }
+                        }
+                        else {
+                            plandb.push().setValue(plan);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
         BottomNavigationView bottomNavigationView = findViewById(R.id.btm_nav_view);
