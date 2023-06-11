@@ -143,22 +143,34 @@ public class Calc_Food extends AppCompatActivity {
                 ));
                 newLayout.setOrientation(LinearLayout.VERTICAL);
 
-                TextInputLayout textInputLayout = new TextInputLayout(Calc_Food.this);
-                textInputLayout.setLayoutParams(new LinearLayout.LayoutParams(
+                TextInputLayout autoCompleteLayout = new TextInputLayout(Calc_Food.this);
+                autoCompleteLayout.setLayoutParams(new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                 ));
-
-                TextInputEditText textInputEditText = new TextInputEditText(Calc_Food.this);
-                textInputEditText.setLayoutParams(new LinearLayout.LayoutParams(
+                AutoCompleteTextView autoCompleteTextView = new AutoCompleteTextView(Calc_Food.this);
+                autoCompleteTextView.setLayoutParams(new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                 ));
-                textInputEditText.setHint("Введите текст");
+                autoCompleteTextView.setHint("Название");
+                autoCompleteLayout.addView(autoCompleteTextView);
 
-                textInputLayout.addView(textInputEditText);
+                TextInputLayout editTextLayout = new TextInputLayout(Calc_Food.this);
+                editTextLayout.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                ));
+                TextInputEditText editText = new TextInputEditText(Calc_Food.this);
+                editText.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                ));
+                editText.setHint("Вес");
+                editTextLayout.addView(editText);
 
-                newLayout.addView(textInputLayout);
+                newLayout.addView(autoCompleteLayout);
+                newLayout.addView(editTextLayout);
 
                 parentLayout.addView(newLayout);
 

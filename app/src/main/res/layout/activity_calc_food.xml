@@ -44,10 +44,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1"
-                        android:hint="Название"
                         android:background="@color/transparent"
+                        android:hint="Название"
                         android:textAlignment="viewStart"
-                        android:theme="@style/CustomAutoCompleteTextViewStyle"/>
+                        android:theme="@style/CustomAutoCompleteTextViewStyle" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -59,10 +59,11 @@
                         android:id="@+id/tet5"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:hint="Вес"
                         android:background="@color/transparent"
+                        android:hint="Вес"
                         android:textAlignment="viewStart"
-                        android:theme="@style/CustomAutoCompleteTextViewStyle"/> />
+                        android:theme="@style/CustomAutoCompleteTextViewStyle" />
+                    />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -85,10 +86,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1"
-                        android:hint="Название"
                         android:background="@color/transparent"
+                        android:hint="Название"
                         android:textAlignment="viewStart"
-                        android:theme="@style/CustomAutoCompleteTextViewStyle"/> />
+                        android:theme="@style/CustomAutoCompleteTextViewStyle" />
+                    />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -100,10 +102,11 @@
                         android:id="@+id/tet4"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:hint="Вес"
                         android:background="@color/transparent"
+                        android:hint="Вес"
                         android:textAlignment="viewStart"
-                        android:theme="@style/CustomAutoCompleteTextViewStyle"/> />
+                        android:theme="@style/CustomAutoCompleteTextViewStyle" />
+                    />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -126,10 +129,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1"
-                        android:hint="Название"
                         android:background="@color/transparent"
+                        android:hint="Название"
                         android:textAlignment="viewStart"
-                        android:theme="@style/CustomAutoCompleteTextViewStyle"/> />
+                        android:theme="@style/CustomAutoCompleteTextViewStyle" />
+                    />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -141,10 +145,11 @@
                         android:id="@+id/tet3"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:hint="Вес"
                         android:background="@color/transparent"
+                        android:hint="Вес"
                         android:textAlignment="viewStart"
-                        android:theme="@style/CustomAutoCompleteTextViewStyle"/> />
+                        android:theme="@style/CustomAutoCompleteTextViewStyle" />
+                    />
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
@@ -168,10 +173,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1"
-                        android:hint="Название"
                         android:background="@color/transparent"
+                        android:hint="Название"
                         android:textAlignment="viewStart"
-                        android:theme="@style/CustomAutoCompleteTextViewStyle"/> />
+                        android:theme="@style/CustomAutoCompleteTextViewStyle" />
+                    />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -183,10 +189,10 @@
                         android:id="@+id/tet2"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:hint="Вес"
                         android:background="@color/transparent"
+                        android:hint="Вес"
                         android:textAlignment="viewStart"
-                        android:theme="@style/CustomAutoCompleteTextViewStyle"/>/>
+                        android:theme="@style/CustomAutoCompleteTextViewStyle" />/>
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -208,10 +214,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1"
-                        android:hint="Название"
                         android:background="@color/transparent"
+                        android:hint="Название"
                         android:textAlignment="viewStart"
-                        android:theme="@style/CustomAutoCompleteTextViewStyle"/> />
+                        android:theme="@style/CustomAutoCompleteTextViewStyle" />
+                    />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -223,10 +230,11 @@
                         android:id="@+id/tet1"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:hint="Вес"
                         android:background="@color/transparent"
+                        android:hint="Вес"
                         android:textAlignment="viewStart"
-                        android:theme="@style/CustomAutoCompleteTextViewStyle"/> />
+                        android:theme="@style/CustomAutoCompleteTextViewStyle" />
+                    />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
