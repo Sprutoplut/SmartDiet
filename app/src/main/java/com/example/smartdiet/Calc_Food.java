@@ -81,6 +81,16 @@ public class Calc_Food extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Button buttonPresent=findViewById(R.id.buttonPresent);
+        buttonPresent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Calc_Food.this, PresentList.class);
+                intent.putExtra("log", arguments.get("log").toString());
+                startActivity(intent);
+                finish();
+            }
+        });
         BottomNavigationView bottomNavigationView = findViewById(R.id.btm_nav_view);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.select_dialog_singlechoice, name);
         AutoCompleteTextView txtcalc1=(AutoCompleteTextView)findViewById(R.id.txtcalc1);

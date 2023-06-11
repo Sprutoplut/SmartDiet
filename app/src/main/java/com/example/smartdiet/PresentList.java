@@ -2,11 +2,16 @@ package com.example.smartdiet;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 
+import com.example.smartdiet.Models.ArrayEat;
+import com.example.smartdiet.Models.Eat;
 import com.example.smartdiet.Models.Weight;
-import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
@@ -23,34 +28,33 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class GraphVisible extends AppCompatActivity {
-    private LineChart chart;
+public class PresentList extends AppCompatActivity {
+    RecyclerViewAdapterList adapter;
+    Context context=this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle arguments = getIntent().getExtras();
-        setContentView(R.layout.activity_graph_visible);
-        chart=findViewById(R.id.chart);
-        DatabaseReference weight= FirebaseDatabase.getInstance().getReference("Weight");
-        Query query =  weight.orderByChild("log").equalTo(arguments.get("log").toString());
+        ArrayList<String> eatl=new ArrayList<>();
+        ArrayList<String> kall=new ArrayList<>();
+        ArrayList<String> datel=new ArrayList<>();
+        setContentView(R.layout.activity_present_list);
+        DatabaseReference eat= FirebaseDatabase.getInstance().getReference("Eat");
+        Query query =  eat.orderByChild("log").equalTo(arguments.get("log").toString());
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ArrayList<Entry> arrayWeight=new ArrayList<>();
-                Weight weight1;
+                Eat eat1;
                 for(DataSnapshot singleSnapshot : snapshot.getChildren()){
-                    weight1 = singleSnapshot.getValue(Weight.class);
-                    String[] datestr=(weight1.date).split("\\.");
-                    arrayWeight.add(new Entry(Integer.parseInt(datestr[0])+(Integer.parseInt(datestr[1])-1)*30,weight1.weight));
+                    eat1 = singleSnapshot.getValue(Eat.class);
+                    eatl.add(eat1.EatList);
+                    kall.add(String.format("%.1f",eat1.Kal));
+                    datel.add(eat1.date);
                 }
-                Collections.sort(arrayWeight, (o1, o2) -> (int) (o1.getX() - o2.getX()));
-                LineDataSet setComp1 = new LineDataSet(arrayWeight,"Вес");
-                setComp1.setAxisDependency(YAxis.AxisDependency.LEFT);
-                List<ILineDataSet> dataSets = new ArrayList<ILineDataSet>();
-                dataSets.add(setComp1);
-                LineData data = new LineData(dataSets);
-                chart.setData(data);
-                chart.invalidate();
+                RecyclerView recyclerView = findViewById(R.id.rvlist);
+                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                adapter = new RecyclerViewAdapterList(context, eatl, kall,datel);
+                recyclerView.setAdapter(adapter);
             }
 
             @Override
@@ -58,5 +62,6 @@ public class GraphVisible extends AppCompatActivity {
 
             }
         });
+
     }
 }

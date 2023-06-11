@@ -17,6 +17,13 @@
         android:theme="@style/Theme.SmartDiet"
         tools:targetApi="31">
         <activity
+            android:name=".PresentList"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".GraphVisible"
             android:exported="false">
             <meta-data
