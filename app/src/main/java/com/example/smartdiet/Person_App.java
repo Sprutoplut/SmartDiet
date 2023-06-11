@@ -106,7 +106,7 @@ public class Person_App extends AppCompatActivity implements TextWatcher{
                     }
                 });
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "Вчера – мечта, сегодня – цель, завтра — реальность", Toast.LENGTH_SHORT);
+                        "Вчера – мечта, сегодня – цель, завтра — реальность", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
             }

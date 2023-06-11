@@ -89,9 +89,19 @@ public class Change_Weight extends AppCompatActivity {
                 Weight weight1=new Weight(arguments.get("log").toString(),Integer.parseInt(txt1.getText().toString()),curDate);
                 weightbd.push().setValue(weight1);
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "ВЕСомые данные записаны", Toast.LENGTH_SHORT);
+                        "ВЕСомые данные записаны", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
+            }
+        });
+        Button button1=findViewById(R.id.buttonGraph);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent5 = new Intent(Change_Weight.this, GraphVisible.class);
+                intent5.putExtra("log", arguments.get("log").toString());
+                startActivity(intent5);
+                finish();
             }
         });
     }

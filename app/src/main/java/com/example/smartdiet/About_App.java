@@ -38,7 +38,7 @@ public class About_App extends AppCompatActivity {
                 File dir = context.getCacheDir();
                 deleteDir(dir);
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "Мусор выкинули. Запах последовал за ним...", Toast.LENGTH_SHORT);
+                        "Мусор выкинули, но запах остался...", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
             }
