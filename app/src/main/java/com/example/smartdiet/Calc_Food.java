@@ -12,12 +12,15 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import com.example.smartdiet.Models.Eat;
 import com.example.smartdiet.Models.Weight;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.opencsv.CSVReader;
@@ -122,6 +125,49 @@ public class Calc_Food extends AppCompatActivity {
                     Eat eat = new Eat(arguments.get("log").toString(), itog, Kal, curDate);
                     eatbd.push().setValue(eat);
                 }
+            }
+        });
+
+        LinearLayout parentLayout = findViewById(R.id.parentlayout);
+        Button buttonplus = findViewById(R.id.buttonplus);
+        buttonplus.setOnClickListener(new View.OnClickListener() {
+            private ScrollView scrollView2;
+
+            @Override
+            public void onClick(View v) {
+                LinearLayout newLayout = new LinearLayout(Calc_Food.this);
+                newLayout.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+
+                ));
+                newLayout.setOrientation(LinearLayout.VERTICAL);
+
+                TextInputLayout textInputLayout = new TextInputLayout(Calc_Food.this);
+                textInputLayout.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                ));
+
+                TextInputEditText textInputEditText = new TextInputEditText(Calc_Food.this);
+                textInputEditText.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                ));
+                textInputEditText.setHint("Введите текст");
+
+                textInputLayout.addView(textInputEditText);
+
+                newLayout.addView(textInputLayout);
+
+                parentLayout.addView(newLayout);
+                
+                scrollView2.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        scrollView2.fullScroll(ScrollView.FOCUS_DOWN);
+                    }
+                });
             }
         });
 
