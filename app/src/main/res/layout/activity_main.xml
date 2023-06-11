@@ -35,8 +35,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilLogin"
-        android:layout_width="328dp"
-        android:layout_height="50dp"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
         android:layout_marginTop="206dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +47,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tLogin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:hint="@string/Login" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -55,19 +55,19 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPassword"
-        android:layout_width="328dp"
-        android:layout_height="50dp"
+        style="@style/RoundedTextInputLayout"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
         android:layout_marginTop="20dp"
+        app:boxBackgroundColor="#52FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilLogin"
-        style="@style/RoundedTextInputLayout"
-        app:boxBackgroundColor="#52FFFFFF">
+        app:layout_constraintTop_toBottomOf="@+id/tilLogin">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:hint="@string/Password"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
