@@ -4,15 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9DBFCF"
+    android:background="@drawable/backgroundfon"
+    android:alpha="0.9"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageViewIcon"
+        android:layout_width="108dp"
+        android:layout_height="113dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/emblema1"
+        app:layout_constraintBottom_toTopOf="@+id/tilLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.353" />
 
     <TextView
         android:id="@+id/tv_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Регистрация"
-        android:textColor="#3F51B5"
+        android:textColor="#040F55"
         android:textStyle="bold"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,14 +40,17 @@
         android:layout_marginTop="206dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/RoundedTextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/Login" />
+
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPassword"
@@ -42,7 +59,8 @@
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilLogin">
+        app:layout_constraintTop_toBottomOf="@+id/tilLogin"
+        style="@style/RoundedTextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tPassword"
@@ -54,8 +72,8 @@
 
     <Button
         android:id="@+id/bSign"
-        android:layout_width="135dp"
-        android:layout_height="61dp"
+        android:layout_width="164dp"
+        android:layout_height="58dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="#DFDFDF"
         android:text="@string/Sign_in"
@@ -72,6 +90,7 @@
         android:layout_marginTop="150dp"
         android:text="У вас еще нет аккаунта ?"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bSign" />
