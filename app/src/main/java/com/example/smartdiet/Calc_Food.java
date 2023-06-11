@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,6 +15,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 import com.example.smartdiet.Models.Eat;
 import com.example.smartdiet.Models.Weight;
@@ -135,6 +137,10 @@ public class Calc_Food extends AppCompatActivity {
                     Eat eat = new Eat(arguments.get("log").toString(), itog, Kal, curDate);
                     eatbd.push().setValue(eat);
                 }
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "ОШИБКА!!! Шучу шучу, все добавлено", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
             }
         });
 
