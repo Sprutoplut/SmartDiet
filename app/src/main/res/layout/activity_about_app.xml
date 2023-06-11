@@ -7,8 +7,8 @@
     tools:context=".About_App">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="410dp"
+        android:layout_height="673dp"
         android:orientation="vertical"
         android:padding="20dp"
         app:layout_constraintBottom_toTopOf="@+id/btm_nav_view"
@@ -18,21 +18,42 @@
 
         <TextView
             android:id="@+id/textView"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:text="SmartDiet"
+            android:textColor="#FB0032"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/textabout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Тормозит ? Думаю, стоит выкинуть мусор, уже попахивает"
+            android:text="Создатели: Галиуллин Руслан, Камаев Ильнур"
             android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/buttonCache"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#DFDFDF"
+            android:gravity="center_vertical|start"
             android:text="Очистить кэш"
             android:textAlignment="viewStart"
             android:textColor="#000000"
             app:icon="@drawable/trash"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/buttonaccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#DFDFDF"
+            android:gravity="center_vertical|start"
+            android:text="Аккаунт"
+            android:textAlignment="viewStart"
+            android:textColor="#000000"
+            app:icon="@drawable/person"
             app:iconTint="#000000" />
     </LinearLayout>
 
@@ -40,7 +61,7 @@
         android:id="@+id/btm_nav_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#1D83B3"
+        android:background="#FF6E6E"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"
         app:labelVisibilityMode="labeled"
