@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.Toast;
 
 import com.example.smartdiet.Models.Weight;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -86,6 +88,10 @@ public class Change_Weight extends AppCompatActivity {
                 TextInputEditText txt1=findViewById(R.id.txt1);
                 Weight weight1=new Weight(arguments.get("log").toString(),Integer.parseInt(txt1.getText().toString()),curDate);
                 weightbd.push().setValue(weight1);
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "ВЕСомые данные записаны", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
             }
         });
     }

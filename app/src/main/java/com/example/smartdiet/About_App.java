@@ -1,14 +1,25 @@
 package com.example.smartdiet;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+
+import java.io.File;
 
 public class About_App extends AppCompatActivity {
 
@@ -19,6 +30,19 @@ public class About_App extends AppCompatActivity {
         Bundle arguments = getIntent().getExtras();
         BottomNavigationView bottomNavigationView = findViewById(R.id.btm_nav_view);
         bottomNavigationView.getMenu().getItem(4).setChecked(true);
+        Context context = this;
+        Button button=findViewById(R.id.buttonCache);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                File dir = context.getCacheDir();
+                deleteDir(dir);
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Мусор выкинули. Запах последовал за ним...", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+        });
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -51,5 +75,21 @@ public class About_App extends AppCompatActivity {
                 return false;
             }
         });
+    }
+    public static boolean deleteDir(File dir) {
+        if (dir != null && dir.isDirectory()) {
+            String[] children = dir.list();
+            for (int i = 0; i < children.length; i++) {
+                boolean success = deleteDir(new File(dir, children[i]));
+                if (!success) {
+                    return false;
+                }
+            }
+            return dir.delete();
+        } else if(dir!= null && dir.isFile()) {
+            return dir.delete();
+        } else {
+            return false;
+        }
     }
 }

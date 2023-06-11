@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            error_in.setText("Ошибка авторизации. "+e.getMessage());
+                            error_in.setText("Мы бы могли вам подсказать данные, но не подскажем"+e.getMessage());
                         }
                     });
                 }

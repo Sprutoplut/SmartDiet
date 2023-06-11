@@ -6,6 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".About_App">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btm_nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Тормозит ? Думаю стоит выкинуть мусор, уже попахивает"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/buttonCache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#DFDFDF"
+            android:text="Очистить кэш"
+            android:textAlignment="viewStart"
+            android:textColor="#000000"
+            app:icon="@drawable/trash"
+            app:iconTint="#000000" />
+    </LinearLayout>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btm_nav_view"
         android:layout_width="match_parent"
