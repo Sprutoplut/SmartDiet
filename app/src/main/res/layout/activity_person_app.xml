@@ -452,7 +452,7 @@
         android:id="@+id/btm_nav_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#1D83B3"
+        android:background="#FF6E6E"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"
         app:labelVisibilityMode="labeled"
