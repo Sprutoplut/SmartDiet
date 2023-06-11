@@ -9,13 +9,16 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="411dp"
+        android:layout_height="394dp"
+        android:layout_marginTop="44dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/parentlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -217,8 +220,8 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="214dp"
+        android:layout_height="59dp"
         android:backgroundTint="#DFDFDF"
         android:padding="15dp"
         android:text="Добавить"
@@ -230,6 +233,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2"
         app:layout_constraintVertical_bias="0.061" />
+
+    <Button
+        android:id="@+id/buttonplus"
+        android:layout_width="140dp"
+        android:layout_height="59dp"
+        android:backgroundTint="#DFDFDF"
+        android:padding="10dp"
+        android:text="+"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btm_nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.055" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btm_nav_view"
