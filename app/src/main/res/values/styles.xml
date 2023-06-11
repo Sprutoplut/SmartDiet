@@ -6,6 +6,7 @@
 
     <style name="RoundedShapeAppearanceOverlay" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">9dp</item>
+        <item name="cornerSize">2dp</item>
     </style>
+
 </resources>

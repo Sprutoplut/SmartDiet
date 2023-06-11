@@ -81,5 +81,14 @@ public class Register extends AppCompatActivity {
             }
         });
 
+        Button backButton = findViewById(R.id.reg_back);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
+
 }
