@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,12 +12,12 @@
         android:id="@+id/linearLayout5"
         android:layout_width="411dp"
         android:layout_height="0dp"
-        android:gravity="center_horizontal|center_vertical"
+        android:gravity="center"
         android:orientation="vertical"
         android:padding="20dp"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -34,7 +35,8 @@
             android:layout_height="wrap_content"
             android:text="SmartDiet"
             android:textColor="#CF667B"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/textabout"
@@ -44,7 +46,8 @@
             android:text="Создатели:\nВеликий и ужасный - Галиуллин Руслан\nМаленький и прекрасный - Камаев Ильнур"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:gravity="center" />
 
     </LinearLayout>
 
@@ -52,7 +55,7 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Тормозит ? Возможно мусор забыли выкинуть, даже немного попахивает"
+        android:text="Тормозит? Возможно, мусор забыли выкинуть, даже немного попахивает"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp"
